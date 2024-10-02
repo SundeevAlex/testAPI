@@ -1,10 +1,9 @@
 from django.contrib import admin
-from django.urls import path
-
-from products.views import ProductsCreateAPIView, ProductsListAPIView
+from django.urls import path, include
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("products/create/", ProductsCreateAPIView.as_view(), name="products-create"),
-    path("products/", ProductsListAPIView.as_view(), name="products-list"),
-]
+    path("", include("products.urls", namespace="products")),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
