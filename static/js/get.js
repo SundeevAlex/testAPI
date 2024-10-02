@@ -1,5 +1,5 @@
 // Define the API endpoint URL
-const apiUrl = '/ajax.html';
+const apiUrl = 'http://localhost:8000/products/';
 
 // Define the function to fetch the data
 async function fetchData() {
