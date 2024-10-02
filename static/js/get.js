@@ -11,7 +11,7 @@ async function fetchData() {
       // Parse the response data as JSON
       const data = await response.json();
       // Display the data on the HTML page
-      displayData('fghfthfj', data);
+      displayData(data);
     } else {
       console.error('Error fetching data:', response.status);
     }
